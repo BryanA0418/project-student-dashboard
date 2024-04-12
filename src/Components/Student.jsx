@@ -16,7 +16,7 @@ export default function Student({student}){
     
 
     return(
-        <li><img src = {profilePhoto}/><h1>{`${preferredName} ${middleName.slice(0,1)} ${surname}`}</h1><p>{username}</p><p><span>Birthday</span>:{dob}</p>
+        <li><img src = {profilePhoto}/><h1>{`${preferredName} ${middleName.slice(0,1)} ${surname}`}</h1><p>{username}</p><p><span>Birthday</span>: {new Date(dob).toLocaleDateString('en-US', {year:"numeric",month:"long",day:"numeric"})}</p>
 
         <a onClick={()=>setShowMore(!showMore)} href="#">{showMore ? "Show less" : "Show more"}</a>
         {showMore && <MoreInfo student = {student}/>}

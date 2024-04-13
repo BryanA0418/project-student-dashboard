@@ -6,7 +6,7 @@ function App() {
   const [students, setStudents] = useState(studentsData);
   
   const [filter, setFilter] = useState([]);
-  const cohorts = students.map(student => student.cohort.cohortCode).filter((code,index,array)=>array.indexOf(code)===index);
+  const cohorts = students.map(student => student.cohort).sort((a,b)=>new Date(b.cohortStartDate) - new Date(a.cohortStartDate)).map(cohort=>cohort.cohortCode).filter((code,index,array)=>array.indexOf(code)===index);
   function filterStudents(e){
     if(e.target.id === "allstudents"){
       setFilter(students)
@@ -24,7 +24,6 @@ function App() {
       <ul>
         <AllStudents 
         students = {filter.length === 0 ? students : filter}
-        cohorts = {cohorts}
         />
       </ul>
     </div>

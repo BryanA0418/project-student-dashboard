@@ -1,5 +1,5 @@
 import Student from "./Student"
-export default function AllStudents({students,cohort}){
+export default function AllStudents({students}){
     return(
         <div>
             <h1>{students.length >= 250 ? "All Students" : students[0].cohort.cohortCode.split(/(\d+)/).join(" ")}</h1>

@@ -1,6 +1,6 @@
 import OneOnOne from "./OneOnOne";
 
-export default function MoreInfo({student}){
+export default function MoreInfo({student,addComment}){
     const {total:currentTotal,lastWeek:currentLastWeek} = student.codewars.current;
     const {total} = student.codewars.goal;
 
@@ -29,7 +29,8 @@ export default function MoreInfo({student}){
                 <p>Mock Interview:{github ? <span>&#10003;</span> : <span>&#10006;</span>}</p>
                 <p>GitHub:{mockInterview ? <span>&#10003;</span> : <span>&#10006;</span>}</p>
             </div>
-            <OneOnOne 
+            <OneOnOne
+            addComment = {addComment} 
             student = {student}
             />
         </div>

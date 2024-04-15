@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export default function OneOnOne({student}){
-    const [comments,setComments] = useState(student.notes)
+export default function OneOnOne({student,addComment}){
+    // const [comments,setComments] = useState(student.notes){student:bryan,class:hi}//
 
     const [newComment,setNewComment] = useState({
         commenter:"",
@@ -19,10 +19,8 @@ export default function OneOnOne({student}){
     
     function handleSubmit(e){
         e.preventDefault();
-        // setNewComment({commenter : e.target.commenterName.value,
-        // comment : e.target.comment.value,})
-        // student.notes.push(newComment)
-        setComments([...comments,newComment])
+
+        addComment(student,newComment);
     }
     return(
     <div>
@@ -35,7 +33,7 @@ export default function OneOnOne({student}){
             <input type="submit" value="Add Note"/>
         </form>
         <ul>
-            {comments.map(({commenter,comment}) =><li>{`${commenter} says, "${comment}"`}</li>)}
+            {student.notes.map(({commenter,comment},index) =><li key={`${student.id}-${index}`}>{`${commenter} says, "${comment}"`}</li>)}
         </ul>
     </div>
     )

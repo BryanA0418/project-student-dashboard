@@ -1,8 +1,9 @@
 .students-list__students{
     display: flex;
     border: solid 2px red;
-    padding:10px;
+    padding:25px;
     margin-bottom: 10px;
+    margin-right: 20px;
 }
 img{
     height:80px;

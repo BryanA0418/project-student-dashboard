@@ -7,7 +7,7 @@
 .container{
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 40% 60%;
 }
 .main-heading{
 background-color: red;

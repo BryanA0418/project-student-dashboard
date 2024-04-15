@@ -4,12 +4,16 @@
     font-family: sans-serif;
     box-sizing: border-box;
 }
+.container{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 50% 50%;
+}
 .main-heading{
 background-color: red;
 color:white;
 text-align: center;
-}
-.main-content{
-    display: flex;
-    justify-content: space-around;
+grid-row: 1;
+grid-column: 1/span 3;
+padding:0;
 }

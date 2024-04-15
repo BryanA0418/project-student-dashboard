@@ -1,0 +1,13 @@
+.students-list__students{
+    display: flex;
+    border: solid 2px red;
+    padding:10px;
+    margin-bottom: 10px;
+}
+img{
+    height:80px;
+}
+.students-list__student{
+    margin-left: 20px;
+    list-style: none;
+}

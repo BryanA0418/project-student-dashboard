@@ -21,23 +21,21 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="container">
       <h1 className="main-heading">Student Dashboard</h1>
-      <div className="main-content">
-        <div>
+        <div className="cohorts-column">
           <Cohorts 
           cohorts = {cohorts}
           filterStudents = {filterStudents}
           />
         </div>
-        <ul>
+        <ul className="students-list">
           <AllStudents
           addComment = {addComment}
           students = {filteredStudents}
           />
         </ul>
       </div>  
-    </div>
   );
 }
 

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import MoreInfo from "./MoreInfo";
+import "./Student.css";
+
 export default function Student({student,addComment}){
 
     const [showMore,setShowMore] = useState(false);
@@ -16,11 +18,13 @@ export default function Student({student,addComment}){
     
 
     return(
-        <li><img src = {profilePhoto}/><h1>{`${preferredName} ${middleName.slice(0,1)} ${surname}`}</h1><p>{username}</p><p><span>Birthday</span>: {new Date(dob).toLocaleDateString('en-US', {year:"numeric",month:"long",day:"numeric"})}</p>
+        <div className="students-list__students">
+        <img src = {profilePhoto}/><li className="students-list__student"><h2>{`${preferredName} ${middleName.slice(0,1)} ${surname}`}</h2><p>{username}</p><p><span>Birthday</span>: {new Date(dob).toLocaleDateString('en-US', {year:"numeric",month:"long",day:"numeric"})}</p>
 
         <a onClick={()=>setShowMore(!showMore)} href="#">{showMore ? "Show less" : "Show more"}</a>
         {showMore && <MoreInfo addComment = {addComment} student = {student}/>}
         <p>{onTrack.every(requirements => requirements) ? "On Track to Graduate": null}</p>
         </li>
+        </div>
     )
 }

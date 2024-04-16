@@ -1,6 +1,6 @@
 .achievement{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly
     border-bottom: solid 2px red ;
     padding:10px;
     margin-bottom: 10px;

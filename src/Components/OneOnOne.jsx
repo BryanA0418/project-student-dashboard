@@ -36,7 +36,7 @@ export default function OneOnOne({student,addComment}){
         </form>
         </div>
         <ul>
-            {student.notes.map(({commenter,comment},index) =><li key={`${student.id}-${index}`}>{`${commenter} says, "${comment}"`}</li>)}
+            {student.notes.map(({commenter,comment},index) =><li className="comments" key={`${student.id}-${index}`}>{`${commenter} says, "${comment}"`}</li>)}
         </ul>
     </>
     )

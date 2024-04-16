@@ -1,4 +1,5 @@
 import OneOnOne from "./OneOnOne";
+import "./MoreInfo.css"
 
 export default function MoreInfo({student,addComment}){
     const {total:currentTotal,lastWeek:currentLastWeek} = student.codewars.current;
@@ -8,31 +9,32 @@ export default function MoreInfo({student,addComment}){
     const {resume,linkedin,github,mockInterview} = student.certifications;
 
     return(
-        <div>
-            <div>
+        <>
+        <div className="achievement">
+            <div className="achievement__r">
                 <h2>Codewars:</h2>
-                <p>Current Total: {currentTotal}</p>
-                <p>Last Week: {currentLastWeek}</p>
-                <p>Goal: {total}</p>
-                <p>Percent of Goal Achieved: {Math.round((currentTotal/total)*100)}%</p>
+                <p className="achievement__req"><span>Current Total:</span> {currentTotal}</p>
+                <p className="achievement__req"><span>Last Week:</span> {currentLastWeek}</p>
+                <p className="achievement__req"><span>Goal:</span> {total}</p>
+                <p className="achievement__req"><span>Percent of Goal Achieved:</span> {Math.round((currentTotal/total)*100)}%</p>
             </div>
-            <div>
+            <div className="achievement__r">
                 <h2>Scores:</h2>
-                <p>Assignments:{assignments*100}%</p>
-                <p>Projects:{projects*100}%</p>
-                <p>Assessments:{assessments*100}%</p>
+                <p className="achievement__req"><span>Assignments:</span>{assignments*100}%</p>
+                <p className="achievement__req"><span>Projects:</span>{projects*100}%</p>
+                <p className="achievement__req"><span>Assessments:</span>{assessments*100}%</p>
             </div>
-            <div>
-                <h2>Certifications:</h2>
-                <p>Resume:{resume ? <span>&#10003;</span> : <span>&#10006;</span>}</p>
-                <p>LinkedIn:{linkedin ? <span>&#10003;</span> : <span>&#10006;</span>}</p>
-                <p>Mock Interview:{github ? <span>&#10003;</span> : <span>&#10006;</span>}</p>
-                <p>GitHub:{mockInterview ? <span>&#10003;</span> : <span>&#10006;</span>}</p>
+            <div className="achievement__r">
+                <h2 >Certifications:</h2>
+                <p className="achievement__req"><span>Resume:</span> {resume ? <span>&#10003;</span> : <span>&#10006;</span>}</p>
+                <p className="achievement__req"><span>LinkedIn:</span>{linkedin ? <span>&#10003;</span> : <span>&#10006;</span>}</p>
+                <p className="achievement__req"><span>Mock Interview:</span>{github ? <span>&#10003;</span> : <span>&#10006;</span>}</p>
+                <p className="achievement__req"><span>GitHub: </span>{mockInterview ? <span>&#10003;</span> : <span>&#10006;</span>}</p>
             </div>
-            <OneOnOne
-            addComment = {addComment} 
-            student = {student}
-            />
         </div>
+        <OneOnOne
+        addComment = {addComment} 
+        student = {student}/>
+        </>
     )
 }

@@ -1,0 +1,12 @@
+.achievement{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 2px red ;
+    padding:10px;
+    margin-bottom: 10px;
+}
+
+.achievement__r{
+padding: 10px;
+justify-content: center;
+}

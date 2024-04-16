@@ -1,0 +1,17 @@
+.comments-styles{
+   border: solid 1px red;
+   padding: 15px; 
+}
+label{
+    padding: 20px;
+}
+input{
+    margin-bottom: 10px;
+}
+#submitbutton{
+    margin-left: 20px;
+}
+#oneonone-heading{
+font-size: 17px;
+margin-bottom: 10px;
+}

@@ -1,6 +1,11 @@
+.extras{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start
+}
 .achievement{
     display: flex;
-    justify-content: space-evenly
+    justify-content: space-evenly;
     border-bottom: solid 2px red ;
     padding:10px;
     margin-bottom: 10px;
@@ -9,4 +14,7 @@
 .achievement__r{
 padding: 10px;
 justify-content: center;
+}
+.achievement__req{
+    margin-bottom: 10px;
 }

@@ -9,7 +9,7 @@ export default function MoreInfo({student,addComment}){
     const {resume,linkedin,github,mockInterview} = student.certifications;
 
     return(
-        <>
+        <div className="extras">
         <div className="achievement">
             <div className="achievement__r">
                 <h2>Codewars:</h2>
@@ -35,6 +35,6 @@ export default function MoreInfo({student,addComment}){
         <OneOnOne
         addComment = {addComment} 
         student = {student}/>
-        </>
+        </div>
     )
 }

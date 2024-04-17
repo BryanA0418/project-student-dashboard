@@ -24,7 +24,7 @@ export default function Student({student,addComment}){
 
         <a onClick={()=>setShowMore(!showMore)} href="#">{showMore ? "Show less..." : "Show more..."}</a>
         {/* {showMore && <MoreInfo addComment = {addComment} student = {student}/>} */}
-        <p>{onTrack.every(requirements => requirements) ? "On Track to Graduate": null}</p>
+        <p>{onTrack.every(requirements => requirements) ? <span>"On Track to Graduate"</span>: null}</p>
         </li>
         </div>
         {showMore && <MoreInfo addComment = {addComment} student = {student}/>}

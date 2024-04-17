@@ -6,7 +6,7 @@ import "./App.css";
 
 function App() {
   const [students, setStudents] = useState(studentsData);
-  
+  const [darkMode,setDarkMode] = useState(true);
   const [filteredStudents, setFilteredStudents] = useState(students);
   const cohorts = students.map(student => student.cohort).sort((a,b)=>new Date(b.cohortStartDate) - new Date(a.cohortStartDate)).map(cohort=>cohort.cohortCode).filter((code,index,array)=>array.indexOf(code)===index);
   function filterStudents(e){
@@ -22,7 +22,14 @@ function App() {
 
   return (
     <div className="container">
-      <h1 className="main-heading">Student Dashboard</h1>
+      <h1 className={darkMode ? "main-heading" : "darkMode-heading"}>Student Dashboard <input type="checkbox" id="darkmode" class="toggle"/>
+      <label for="darkmode" class="label">
+        <div onClick={()=>setDarkMode(!darkMode)}class="ball">
+
+        
+        </div>
+
+      </label></h1>
         <div className="cohorts-column">
           <Cohorts 
           cohorts = {cohorts}

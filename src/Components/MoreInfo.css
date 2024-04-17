@@ -6,9 +6,9 @@
 .achievement{
     display: flex;
     justify-content: space-evenly;
-    border-bottom: solid 2px red ;
     padding:10px;
     margin-bottom: 10px;
+    border-bottom: solid 2px red
 }
 
 .achievement__r{
